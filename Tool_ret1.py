@@ -6,10 +6,11 @@ import numpy as np
 # Load dataset
 @st.cache_data
 def load_data():
-    file_path = "/Users/David/Dropbox/Mac/Desktop/Personal/Blog/Tool/Retire_country/Ret_data.xlsx"
-    xls = pd.ExcelFile(file_path)
-    df = pd.read_excel(xls, sheet_name="Country")
+    url = "https://raw.githubusercontent.com/Gadamer007/Retirement_location/main/Ret_data.xlsx"  # Correct raw URL
+    df = pd.read_excel(url, sheet_name="Country")
     return df
+
+# Load the data
 
 data = load_data()
 data['Country'] = data['Country'].str.strip().str.title()
