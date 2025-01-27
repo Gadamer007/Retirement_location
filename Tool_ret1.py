@@ -142,8 +142,8 @@ if selected_vars:
         color=df_selected['Continent'],
         title="Retirement Suitability vs Cost of Living", 
         labels={
-            "Col_2025": "Cost of Living", 
-            "Retirement Suitability": "Retirement Suitability",
+            "Col_2025": "Cost of Living (0 - 100)", 
+            "Retirement Suitability": "Retirement Suitability (0 - 100)",
             "Pollution_Hover": "Pollution"  # Keep it as "Pollution"
         },
         template="plotly_dark", 
