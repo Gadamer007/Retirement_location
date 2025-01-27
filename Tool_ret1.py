@@ -121,17 +121,34 @@ if selected_vars:
     df_selected['Retirement Suitability'] = df_selected[selected_vars].mean(axis=1)
 
     # Scatter Plot
-    # Adjust Pollution for hover data
+    # Ensure we do not modify the original DataFrame
+    df_selected = df_selected.copy()
+
+    # If Pollution is in selected variables, create the inverse for hover display
+    if "Pollution" in selected_vars:
+        df_selected["Pollution_Hover"] = 100 - df_selected["Pollution"]  # Invert Pollution values
+
+    # Update hover data mapping
     hover_data_adjusted = {var: ':.2f' for var in selected_vars}
     if "Pollution" in selected_vars:
-        df_selected["Pollution_Hover"] = 100 - df_selected["Pollution"]
-        hover_data_adjusted["Pollution_Hover"] = ':.2f'  # Show adjusted Pollution
+        hover_data_adjusted["Pollution_Hover"] = ':.2f'  # Use the inverted Pollution for hover
+        hover_data_adjusted.pop("Pollution", None)  # Remove the original Pollution from hover
 
     fig_scatter = px.scatter(
-        df_selected, x="Retirement Suitability", y="Col_2025", text="Country", color=df_selected['Continent'],
-        title="Retirement Suitability vs Cost of Living", labels={"Col_2025": "Cost of Living", "Retirement Suitability": "Retirement Suitability"},
-        template="plotly_dark", category_orders={"Continent": ["America", "Europe", "Asia", "Africa", "Oceania"]},
-        hover_data=hover_data_adjusted
+        df_selected, 
+        x="Retirement Suitability", 
+        y="Col_2025", 
+        text="Country", 
+        color=df_selected['Continent'],
+        title="Retirement Suitability vs Cost of Living", 
+        labels={
+            "Col_2025": "Cost of Living", 
+            "Retirement Suitability": "Retirement Suitability",
+            "Pollution_Hover": "Cleanliness Index (100 - Pollution)"  # Updated label
+        },
+        template="plotly_dark", 
+        category_orders={"Continent": ["America", "Europe", "Asia", "Africa", "Oceania"]},
+        hover_data=hover_data_adjusted  # Ensure we use the adjusted hover_data
     )
 
     fig_scatter.update_traces(marker=dict(size=10), textposition='top center')
