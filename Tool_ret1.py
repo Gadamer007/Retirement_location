@@ -144,7 +144,7 @@ if selected_vars:
         labels={
             "Col_2025": "Cost of Living", 
             "Retirement Suitability": "Retirement Suitability",
-            "Pollution_Hover": "Cleanliness Index (100 - Pollution)"  # Updated label
+            "Pollution_Hover": "Pollution"  # Keep it as "Pollution"
         },
         template="plotly_dark", 
         category_orders={"Continent": ["America", "Europe", "Asia", "Africa", "Oceania"]},
