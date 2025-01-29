@@ -97,6 +97,7 @@ instructions = """
 - **Example**: Imagine we want very strict criteria across most variariables, and set Safety (2), Healthcare (2), Political stability (2), Pollution (2), Climate (3). We have only 6 countries complying with this criteria. We can observe that Spain, Portugal, and Japan are good candidates under this criteria that also have a relatively low COL.
 - The **map below** helps visualize how the different underlying variables of the Retirement Suitability score are distributed geographically. For example, how Safety or Healthcare compares across countries.
 - **Data is from Numbeo (2025)**, with the exception of Political stability, which is an aggregate score of the World Bank's World Governance Indicators (2023): Voice and accountability; political stability and absence of violence/terrorism; government effectiveness; regulatory quality; rule of law; and control of corruption.
+- The tool cannot easily account for the complexities of Capital Gains Tax (CGT) across countries, but users should keep this in mind (**[see here](https://taxsummaries.pwc.com/quick-charts/capital-gains-tax-cgt-rates)**).
 """
 st.write(instructions)
 
