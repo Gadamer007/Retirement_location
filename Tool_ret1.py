@@ -87,19 +87,20 @@ st.title("Best Countries for Early Retirement: Where to Retire Abroad?")
 # Instructions Section
 st.write("### Instructions for Using the Tool")
 instructions = """
-- This tool aims to help users find the **most suitable country for retirement** abroad.  
-- On the left panel, you can **select the key variables** that are most relevant to you. For instance, if pollution is not a factor you want to consider, then unclick it.  
-- **Use the sliders to filter out** poor-performing countries for certain variables. For example, if we move Safety from 5 to 4, it will drop the worst-performing countries for this variable. If we move it all the way to 1, it will only keep a handful of extremely safe countries.  
-- The tool calculates a **Retirement Suitability** score based on the average across the selected variables.  
-- The **Figure plots the Retirement Suitability** score against **cost of living (COL)** to help users identify good candidate countries.    
-- Hover over the top right of the figure and use the **zoom tool** (draw a square on the figure), zoom in/out, pan, and other functions to better visualize your countries of interest.
-- Click on the **legend's continents** to remove groups of countries.
-- **Example**: Imagine we want very strict criteria across most variariables, and set Safety (2), Healthcare (2), Political stability (2), Pollution (2), Climate (3). We have only 6 countries complying with this criteria. We can observe that Spain, Portugal, and Japan are good candidates under this criteria that also have a relatively low COL.
-- The **map below** helps visualize how the different underlying variables of the Retirement Suitability score are distributed geographically. For example, how Safety or Healthcare compares across countries.
-- **Data is from Numbeo (2025)**, with the exception of Political stability, which is an aggregate score of the World Bank's World Governance Indicators (2023): Voice and accountability; political stability and absence of violence/terrorism; government effectiveness; regulatory quality; rule of law; and control of corruption.
-- The tool cannot easily account for the complexities of **Capital Gains Tax** (CGT) across countries, but users should keep this in mind (**[see here](https://taxsummaries.pwc.com/quick-charts/capital-gains-tax-cgt-rates)**).
+- This tool helps users identify the **best country for retirement** abroad.  
+- Use the **left panel** to **select variables** that matter to you (e.g., uncheck Pollution if it’s not a factor).  
+- **Adjust sliders** to filter out low-performing countries for a given variable (e.g., setting Safety from 5 to 4 removes the least safe countries).  
+- The tool calculates a **Retirement Suitability Score** as the **average of the selected factors**.  
+- The **figure plots this score** against **cost of living (COL)** to highlight potential destinations.  
+- Use the **zoom tool** (top-right of the figure) to explore specific countries.  
+- Click on **legend continents** to hide/unhide regions.  
+- **Example**: Setting strict criteria for Safety (2), Healthcare (2), Political Stability (2), Pollution (2), and Climate (3) results in 6 qualifying countries. Spain, Portugal, and Japan emerge as good candidates with a low COL.  
+- The **map below** shows how the Retirement Suitability factors are distributed geographically.  
+- **Data is from Numbeo (2025)**, except for Political Stability, which is based on the **World Bank's Governance Indicators (2023)**.  
+- The tool does not account for **Capital Gains Tax (CGT)**, but users should consider it (**[see here](https://taxsummaries.pwc.com/quick-charts/capital-gains-tax-cgt-rates)**).  
 """
 st.write(instructions)
+
 
 # Sidebar Filters
 st.sidebar.subheader("Select Variables for Retirement Suitability")
